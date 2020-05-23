@@ -16,6 +16,29 @@ network = pylast.LastFMNetwork(api_key=API_KEY, api_secret=API_SECRET,
 
 
 
+
+
+# how long to pause between consecutive API requests
+# pause_duration = 0.2
+
+
+
+
+
+
+#GeoMethods
+geo_top_tracks=network.get_geo_top_tracks('Spain')
+for play in geo_top_tracks:
+    print(f" {play.item} and playcount is {play.weight}")
+
+geo_top_tracks=network.get_geo_top_artists('Spain')
+for play in geo_top_tracks:
+    print(f" {play.item}")
+
+
+
+
+
 #Album methods:
 album=network.get_album("Doja cat", "Amala")
 album_info=album.get_url()
